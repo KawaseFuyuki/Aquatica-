@@ -388,13 +388,13 @@ async def start_rps(interaction, p1, p2):
 async def on_ready():
     print(f"{bot.user} is online!")
     bot.add_view(GamesPanel())
-        await bot.change_presence(activity=discord.Game(name="created by kitaryo senpai"))
+    await bot.change_presence(activity=discord.Game(name="created by kitaryo senpai"))
     try:
         synced = await bot.tree.sync()
         print(f"Synced {len(synced)} commands")
     except Exception as e:
         print(e)
-
+        
 @bot.tree.command(name="games", description="Open the games panel")
 async def games_slash(interaction: discord.Interaction):
     await send_games_panel(interaction)
