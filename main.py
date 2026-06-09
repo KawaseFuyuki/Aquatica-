@@ -5,6 +5,22 @@ import json
 import os
 import random
 import asyncio
+from flask import Flask
+from threading import Thread
+
+# ===== FLASK KEEP ALIVE FOR RENDER =====
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "Bot is running!"
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
 
 TOKEN = os.getenv('DISCORD_TOKEN')
 
@@ -740,4 +756,5 @@ async def on_interaction(interaction):
                     save_data()
                     await interaction.message.edit(embed=embed, view=view)
 
+keep_alive()
 bot.run(TOKEN)
