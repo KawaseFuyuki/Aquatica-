@@ -388,6 +388,7 @@ async def start_rps(interaction, p1, p2):
 async def on_ready():
     print(f"{bot.user} is online!")
     bot.add_view(GamesPanel())
+        await bot.change_presence(activity=discord.Game(name="created by kitaryo senpai"))
     try:
         synced = await bot.tree.sync()
         print(f"Synced {len(synced)} commands")
