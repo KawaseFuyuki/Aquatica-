@@ -1,0 +1,16 @@
+{
+  "name": "aquabot",
+  "version": "1.0.0",
+  "description": "AquaBot — Discord bot with 7 mini-games and moderation commands",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3"
+  }
+}
