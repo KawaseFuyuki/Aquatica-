@@ -119,8 +119,7 @@ client.on('interactionCreate', async interaction => {
             helpEmbed = new EmbedBuilder()
                 .setColor(BLUE)
                 .setTitle('🛡️ Moderation Help')
-                .setDescription('Prefix: `aq `
-`aq ban @user`, `aq kick @user`, `aq mute @user`');
+                .setDescription('Prefix: aq \n`aq ban @user`, `aq kick @user`, `aq mute @user`');
         } else {
             helpEmbed = new EmbedBuilder()
                 .setColor(BLUE)
